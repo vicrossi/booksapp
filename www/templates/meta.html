@@ -1,0 +1,22 @@
+<ion-view title="Adicione sua meta" ng-controller="MetaController">
+	<form ng-submit="doInsert()">
+		<ion-content class="app-background t-center">
+			<div class="content">
+				<div class="list">
+					<label class="item item-input item-stacked-label">
+	                    <span>Livro</span>
+	                    <input type="text" name="nome_livro" ng-model="book.nome" />
+	                </label>
+	                <label class="item item-input item-stacked-label">
+	                    <span>Data de Término</span>
+	                    <input type="text" name="nome_livro" ng-model="book.autor" />
+	                </label>
+	            </div>
+			</div>
+		</ion-content>
+
+		<ion-footer-bar align-title="left" class="btn-primary" keyboard-attach>
+	    	<button class="button button-full button-positive" type="submit" />Salvar Meta</button>
+	    </ion-footer-bar>
+	</form>
+</ion-view>

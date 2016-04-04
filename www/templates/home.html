@@ -1,0 +1,24 @@
+<ion-view title="Book App" >
+	<ion-content class="app-background t-center">
+		<div class="content">
+			Tela inicial <br />
+
+			Aqui o usuario tera um logo e a opção de entrar no site ou criar sua conta.
+
+			<h2>Criar conta</h2>
+			<form>
+				<label class="item item-input item-stacked-label">
+                    <span>Usuario</span>
+                    <input type="text" name="usuario" ng-model="credentials.user" />
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span>Senha</span>
+                    <input type="password" name="senha" ng-model="credentials.pass" />
+                </label><br />
+
+                <button class="button button-positive"  ng-click="criarConta()">Criar</button>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

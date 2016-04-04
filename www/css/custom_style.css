@@ -1,0 +1,25 @@
+/* Definicoes Globais */
+.content {
+	font-size: 12px;
+	text-align: center;
+	padding: 5px;
+}
+.item-input {
+	font-size: 12px;
+	font-weight: bold;
+	border: none;
+	border-bottom: 1px dashed #ccc;
+}
+	.item-input input {
+		font-size: 12px;
+		color: #777;
+	}
+.item-stacked-label {
+	text-align: left;
+}
+.button.button-full {
+	margin: 0px;
+}
+.bar-footer {
+	padding: 0px;
+}
