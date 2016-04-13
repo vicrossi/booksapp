@@ -23,3 +23,10 @@
 .bar-footer {
 	padding: 0px;
 }
+
+/**
+ * Customizacoes para o cabecalho padrao
+ */
+.header-item {
+	font-size: 14px !important;
+}

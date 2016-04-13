@@ -5,21 +5,23 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic','starter.controllers'])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
-  $stateProvider.state('index', {
-    cache: false,
-    url: '/',
-    templateUrl: 'templates/home.html',
-    controller: 'MainController'
-  });
+  $ionicConfigProvider.tabs.position('top'); //bottom
 
-  $stateProvider.state('lido', {
-    cache: false,
-    url: '/',
-    templateUrl: 'templates/lido.html',
-    controller: 'BookController'
-  });
+  // $stateProvider.state('index', {
+  //   cache: false,
+  //   url: '/',
+  //   templateUrl: 'templates/home.html',
+  //   controller: 'MainController'
+  // });
+
+  // $stateProvider.state('lido', {
+  //   cache: false,
+  //   url: '/',
+  //   templateUrl: 'templates/lido.html',
+  //   controller: 'BookController'
+  // });
 
   //Paginas para as metas
   //Add / List
@@ -32,12 +34,12 @@ angular.module('starter', ['ionic','starter.controllers'])
 
   //Paginas para a lista de desejos
   //Add / List
-  $stateProvider.state('desejo', {
-    cache: false,
-    url: '/desejo',
-    templateUrl: 'templates/desejo.html',
-    controller: 'WishController'
-  });
+  // $stateProvider.state('desejo', {
+  //   cache: false,
+  //   url: '/desejo',
+  //   templateUrl: 'templates/desejo.html',
+  //   controller: 'WishController'
+  // });
 
   $stateProvider.state('logado', {
     cache: false,
@@ -46,7 +48,50 @@ angular.module('starter', ['ionic','starter.controllers'])
     controller: 'WishController'
   });
 
-  $urlRouterProvider.otherwise('/');
+  $stateProvider
+  .state('tabs', {
+      url: "/tab",
+      abstract: true,
+      templateUrl: "templates/tabs.html"
+    })
+  .state('tabs.desejo', {
+      url: "/desejo",
+      views: {
+        'desejo-tab': {
+          templateUrl: "templates/desejo.html",
+          controller: 'WishController'
+        }
+      }
+    })
+  .state('tabs.lido', {
+      url: "/lido",
+      views: {
+        'lido-tab': {
+          templateUrl: "templates/lido.html",
+          controller: 'BookController'
+        }
+      }
+    })
+  .state('tabs.meta', {
+      url: "/meta",
+      views: {
+        'meta-tab': {
+          templateUrl: "templates/meta.html",
+          controller: 'BookController'
+        }
+      }
+    })
+  .state('tabs.avaliacao', {
+      url: "/avaliacao",
+      views: {
+        'avaliacao-tab': {
+          templateUrl: "templates/avaliacao.html",
+          controller: 'BookController'
+        }
+      }
+    })
+
+  $urlRouterProvider.otherwise('/tab/desejo');
 
 })
 
