@@ -1,22 +1,6 @@
 var app = angular.module('starter.controllers', ['ionic'])
 
-app.controller('MainController', function($scope, $state, $ionicModal, $ionicHistory, $rootScope) {
- 	
- 	/**
- 	 * Abre a tela para insercao de um novo livro
- 	 * @author Victor Rossi
- 	 */
-	$scope.addBook = function() 
-	{
-		$ionicModal.fromTemplateUrl('addBook.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        })
-        .then(function(modal) {
-            $scope.modal = modal
-            $scope.modal.show();
-        });
-	}
+app.controller('MainController', function($scope, $state, $ionicModal, $ionicHistory, $rootScope, $ionicActionSheet) {
 
 	/**
 	 * Metodo Global para fechar um modal do app
@@ -64,6 +48,27 @@ app.controller('MainController', function($scope, $state, $ionicModal, $ionicHis
 		$rootScope.logado = true;
 		$state.go('logado');
 	}
+
+  /**
+   * Adiciona acoes do menu de configuracoes
+   * @author Victor Rossi
+   */
+  $scope.more = function() {
+      // Show the action sheet
+     var hideSheet = $ionicActionSheet.show({
+       buttons: [
+         { text: 'Adicionar a lista de desejos' },
+         { text: 'Definir como meta' }
+       ],
+       cancelText: 'Cancelar',
+       cancel: function() {
+            // add cancel code..
+          },
+       buttonClicked: function(index) {
+         return true;
+       }
+     });
+  }
 
 	/**
 	 * Desloga o usuario

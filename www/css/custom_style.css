@@ -30,3 +30,44 @@
 .header-item {
 	font-size: 14px !important;
 }
+
+.morebutton i {
+	font-size: 18px !important;
+}
+
+.tabs {
+	height: 30px;
+	/*background-color: #3478EC !important;*/
+}
+.tab-item .icon {
+	height: auto;
+}
+.tab-nav a i{
+	font-size: 22px !important;
+	height: none;
+}
+.tab-item-active {
+	border-bottom: 3px solid #f2f2f2;
+}
+.action-sheet-option {
+	font-size: 16px !important;
+}
+.action-sheet-cancel button {
+	font-size: 16px !important;
+	color: red !important;
+}
+/**
+ * Customizacao do card principal
+ */
+.card {
+	padding: 0px;
+}
+
+.pull-left {
+	float: left;
+	margin-right: 10px;
+}
+
+.more {
+	font-size: 18px !important;
+}
